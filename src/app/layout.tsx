@@ -1,7 +1,7 @@
 import { TRPCProvider } from '@/components/Providers';
-import { ThemeRegistry } from '@/components/ThemeRegistry';
-import { Navigation } from '@/components/Navigation';
-import { ErrorBoundary } from '@/components/ErrorBoundary';
+import { ThemeRegistry } from '@/components/themeRegistry';
+import { Navigation } from '@/components/navigation';
+import { ErrorBoundary } from '@/components/errorBoundary';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
