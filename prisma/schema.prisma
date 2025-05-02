@@ -10,6 +10,6 @@ generator client {
 model Pokemon {
   id     Int      @id @default(autoincrement())
   name   String   @unique
-  types  String[] // This will store JSON array of types
+  types  String[]
   sprite String
 }
