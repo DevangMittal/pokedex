@@ -1,0 +1,15 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Pokemon {
+  id     Int      @id @default(autoincrement())
+  name   String   @unique
+  types  String[] // This will store JSON array of types
+  sprite String
+}
