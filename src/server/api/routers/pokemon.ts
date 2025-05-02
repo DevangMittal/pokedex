@@ -1,21 +1,33 @@
 import { z } from "zod";
-import { router, publicProcedure } from "@/server/api/trpc";
-import { prisma } from "@/server/db";
+import { router, publicProcedure } from "../trpc";
+import { prisma } from "../../db";
+import { Prisma } from "@prisma/client";
 
 export const pokemonRouter = router({
     getByName: publicProcedure
         .input(z.string())
         .query(async ({ input }) => {
-            return prisma.pokemon.findUnique({
-                where: { name: input },
+            const pokemon = await prisma.pokemon.findFirst({
+                where: { 
+                    name: {
+                        equals: input,
+                        mode: 'insensitive' as Prisma.QueryMode
+                    }
+                },
             });
+            return pokemon;
         }),
 
     getByNames: publicProcedure
         .input(z.array(z.string()))
         .query(async ({ input }) => {
             return prisma.pokemon.findMany({
-                where: { name: { in: input } },
+                where: { 
+                    name: { 
+                        in: input,
+                        mode: 'insensitive' as Prisma.QueryMode
+                    }
+                },
             });
         }),
 
@@ -28,7 +40,7 @@ export const pokemonRouter = router({
             return prisma.pokemon.findMany({
                 where: {
                     types: {
-                        has: input
+                        has: input.toLowerCase()
                     }
                 }
             });
