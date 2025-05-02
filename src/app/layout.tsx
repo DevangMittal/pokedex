@@ -1,6 +1,7 @@
 import { TRPCProvider } from '@/components/Providers';
-import { ThemeRegistry } from '@/components/themeRegistry';
-import { Navigation } from '@/components/navigation';
+import { ThemeRegistry } from '@/components/ThemeRegistry';
+import { Navigation } from '@/components/Navigation';
+import { ErrorBoundary } from '@/components/ErrorBoundary';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -18,8 +19,10 @@ export default function RootLayout({
       <body>
         <ThemeRegistry>
           <TRPCProvider>
-            <Navigation />
-            {children}
+            <ErrorBoundary>
+              <Navigation />
+              {children}
+            </ErrorBoundary>
           </TRPCProvider>
         </ThemeRegistry>
       </body>
