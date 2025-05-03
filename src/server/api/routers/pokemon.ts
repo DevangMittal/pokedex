@@ -49,11 +49,11 @@ export const pokemonRouter = router({
     getAll: publicProcedure
         .input(z.object({
             type: z.string().optional(),
-            limit: z.number().min(1).max(100).optional(),
+            limit: z.number().min(1).max(2).optional(),
             cursor: z.number().optional(),
         }))
         .query(async ({ input }) => {
-            const limit = input.limit ?? 20;
+            const limit = input.limit ?? 2;
             const { type, cursor } = input;
 
             const pokemons = await prisma.pokemon.findMany({
