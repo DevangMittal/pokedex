@@ -21,7 +21,7 @@ export const FilterablePokedexTable = () => {
 
     const { data, isLoading, isFetching } = api.pokemon.getAll.useQuery({
         type: selectedType,
-        limit: 2,
+        limit: 10,
         cursor: cursor
     });
 
