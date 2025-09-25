@@ -8,7 +8,7 @@ export const pokemonRouter = router({
         .input(z.string())
         .query(async ({ input }) => {
             const pokemon = await prisma.pokemon.findFirst({
-                where: { 
+                where: {
                     name: {
                         equals: input,
                         mode: 'insensitive' as Prisma.QueryMode
@@ -22,8 +22,8 @@ export const pokemonRouter = router({
         .input(z.array(z.string()))
         .query(async ({ input }) => {
             return prisma.pokemon.findMany({
-                where: { 
-                    name: { 
+                where: {
+                    name: {
                         in: input,
                         mode: 'insensitive' as Prisma.QueryMode
                     }
@@ -49,7 +49,7 @@ export const pokemonRouter = router({
     getAll: publicProcedure
         .input(z.object({
             type: z.string().optional(),
-            limit: z.number().min(1).max(2).optional(),
+            limit: z.number().min(1).max(50).optional(),
             cursor: z.number().optional(),
         }))
         .query(async ({ input }) => {
