@@ -7,7 +7,7 @@ export default function Home() {
   const router = useRouter();
 
   useEffect(() => {
-    router.push('/part1');
+    router.push('/single-pokemon');
   }, [router]);
 
   return null;
