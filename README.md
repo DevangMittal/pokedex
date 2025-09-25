@@ -8,17 +8,17 @@ A full-stack Pokédex application built with modern web technologies. Search, fi
 
 ## ✨ Features
 
-### Part 1: Single Pokémon Search
+### Single Pokémon Search
 - Search for individual Pokémon by name
 - View detailed information including ID, name, types and sprite
 - Responsive card layout for each Pokémon
 
-### Part 2: Multiple Pokémon Search  
+### Multiple Pokémon Search  
 - Search for multiple Pokémon simultaneously
 - Enter comma-separated Pokémon names
 - View results in a clean table format
 
-### Part 3: Type Filtering
+### Type Filtering
 - Filter Pokémon by their types
 - Interactive type selection dropdown
 - Real-time filtering of results
