@@ -4,7 +4,7 @@ A full-stack Pokédex application built with modern web technologies. Search, fi
 
 ## 🌐 Live Demo
 
-[View Live Demo](https://pokedex-mu-tan.vercel.app/part1)
+[View Live Demo](pokedex-git-main-devang-mittals-projects.vercel.app)
 
 ## ✨ Features
 
