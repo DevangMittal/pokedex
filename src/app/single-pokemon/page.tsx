@@ -5,7 +5,7 @@ import { Box, Container, TextField, Paper, CircularProgress } from '@mui/materia
 import { PokemonRow } from '@/components/pokemonRow';
 import { api } from '@/utils/api';
 
-export default function Part1() {
+export default function SinglePokemon() {
     const [pokemonName, setPokemonName] = useState('');
     const { data: pokemon, isLoading } = api.pokemon.getByName.useQuery(pokemonName, {
         enabled: pokemonName.length > 0,
