@@ -5,7 +5,7 @@ import { Box, Container, TextField, Paper } from '@mui/material';
 import { PokedexTable } from '@/components/pokedexTable';
 import { api } from '@/utils/api';
 
-export default function Part2() {
+export default function MultiplePokemon() {
     const [pokemonNames, setPokemonNames] = useState('');
     const { data: pokemons } = api.pokemon.getByNames.useQuery(
         pokemonNames.split(',').map(name => name.trim()).filter(Boolean),

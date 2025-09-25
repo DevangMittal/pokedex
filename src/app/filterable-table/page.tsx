@@ -2,6 +2,6 @@
 
 import { FilterablePokedexTable } from '@/components/filterablePokedexTable';
 
-export default function Part3() {
+export default function FilterableTable() {
     return <FilterablePokedexTable />;
 }

@@ -8,9 +8,9 @@ export const Navigation = () => {
     const pathname = usePathname();
 
     const routes = [
-        { path: '/part1', label: 'Single Pokemon' },
-        { path: '/part2', label: 'Multiple Pokemon' },
-        { path: '/part3', label: 'Filterable Table' },
+        { path: '/single-pokemon', label: 'Single Pokemon' },
+        { path: '/multiple-pokemon', label: 'Multiple Pokemon' },
+        { path: '/filterable-table', label: 'Filterable Table' },
     ];
 
     return (
